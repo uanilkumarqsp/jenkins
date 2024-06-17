@@ -26,6 +26,8 @@ import com.comcast.crm.generic.webdriverutility.JavaUtility;
 import com.comcast.crm.generic.webdriverutility.UtilityClassObject;
 import com.comcast.crm.generic.webdriverutility.WebDriverUtility;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
+
 public class BaseClass {
 	
 	 public WebDriver driver=null ;
@@ -54,7 +56,7 @@ public class BaseClass {
 		System.out.println(BROWSER);
 		
 		if(BROWSER.equals("chrome"))
-		{
+		{     WebDriverManager.chromedriver().setup();
 			 driver = new ChromeDriver();
 			
 		}
